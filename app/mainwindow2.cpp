@@ -91,13 +91,13 @@ MainWindow2::MainWindow2( QWidget *parent ) : QMainWindow( parent )
     object->init();
 
     mEditor = new Editor( this );
+    mEditor->setScribbleArea(mScribbleArea);
     mEditor->init();
     mEditor->setObject( object );
 
     mScribbleArea->setCore( mEditor );
     mScribbleArea->init();
 
-    mEditor->setScribbleArea( mScribbleArea );
     makeConnections( mEditor, mScribbleArea );
 
     mCommands = new CommandCenter( this );
